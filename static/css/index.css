@@ -1,0 +1,22 @@
+body {
+    display: block;
+     color: #0199d8;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/743986/pexels-photo-743986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+h1 {
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.09);
+  border-radius: 105px;
+}
+

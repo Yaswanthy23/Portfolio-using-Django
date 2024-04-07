@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+{% include 'navbar.html' %}
+{% load static %}
+<html>
+<head>
+    <title>Stylish Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+{% block body_block %}
+    <h1>Portfolio Application</h1>
+    <h1>this contains various djando projects</h1>
+    <h1>explore   the   projects</h1>
+{% endblock %}
+
+</body>
+
+</html>

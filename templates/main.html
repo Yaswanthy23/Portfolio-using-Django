@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+{% include 'navbar.html' %}
+{% load static %}
+
+<html>
+<head>
+    <title>Main page</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+
+<body background="https://extendthemes.com/demos/mesmerize-pro-portfolio/wp-content/uploads/sites/16/2016/06/cropped-background-2726039-6x4.jpg">
+{% block body_block %}
+<div class="grid-container">
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://i.gifer.com/ItfE.gif" alt="Image 1">
+                <div class="button-container">
+                    <button onclick="showDetails('image1')">View Details</button>
+                    <button onclick="downloadFile('image1')">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://cdn.dribbble.com/users/125056/screenshots/1476165/99miles-resume-builder-icon-ios.gif" alt="Image 2">
+                <div class="button-container">
+                    <button onclick="showDetails('image2')">View Details</button>
+                    <button onclick="downloadFile('image2.jpg')">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://cdn.dribbble.com/users/2985218/screenshots/11007223/media/8aa92a8c7b96f2ddeef9e824b9349837.gif" alt="Image 3">
+                <div class="button-container">
+                    <button onclick="showDetails('image3')">View Details</button>
+                    <button onclick="downloadFile('image3.jpg')">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://cdn.dribbble.com/users/4908/screenshots/2787171/invoice-animation-dribbble.gif" alt="Image 4">
+                <div class="button-container">
+                    <button onclick="showDetails('image4')">View Details</button>
+                    <button onclick="downloadFile('image4.jpg')">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://cdn.dribbble.com/users/470545/screenshots/3471475/calculater.gif" alt="Image 5">
+                <div class="button-container">
+                    <button onclick="showDetails('image5')">View Details</button>
+                    <button onclick="downloadFile('image5.jpg')">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://kraft.blog/uploads/blog-animated.gif" alt="Image 6">
+                <div class="button-container">
+                    <button onclick="showDetails('image6')">View Details</button>
+                    <button onclick="downloadFile('image6.jpg')">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://static.wixstatic.com/media/482222_ce4fc781674d436087b221d52e484c23~mv2.gif" alt="Image 7">
+                <div class="button-container">
+                    <button onclick="showDetails('image7')">View Details</button>
+                    <button onclick="downloadFile('image7')">Download</button>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="image-container">
+                <img class="image" src="https://cdn.dribbble.com/users/904380/screenshots/2230701/google-logo-revised-spinner.gif" alt="Image 7">
+                <div class="button-container">
+                    <button onclick="showDetails('image8')">View Details</button>
+                    <button onclick="downloadFile('image8')">Download</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Details Overlay -->
+    <div class="details-overlay" id="detailsOverlay">
+        <div class="details-content">
+            <h2>Project Details</h2>
+            <p id="detailsText"></p>
+            <button onclick="hideDetails()">Close</button>
+        </div>
+    </div>
+
+    <!-- Download Notification -->
+    <div class="download-notification" id="downloadNotification">
+        Image downloaded successfully!
+    </div>
+
+    <div id="imageOverlay" class="overlay">
+  <div id="imageContainer">
+    <img id="overlayImage" src="">
+    <button id="closeButton" onclick="hideImage()">Close</button>
+  </div>
+</div>
+
+
+    <script>
+    function showDetails(imageName) {
+        // Get the details for the image with the provided image name
+        // You can update the following lines with your logic
+        var details = {
+            image1: {
+                title: "Food Menu App",
+                description: "Introducing our food menu app, a convenient platform designed to revolutionize your dining experience. With a user-friendly interface, you can easily explore a diverse range of restaurants and their delectable menus. Enjoy browsing enticing food visuals, detailed descriptions, and prices for each item. Personalize your orders, select pickup or delivery, and make secure payments within the app. Stay updated with push notifications on order status and exclusive promotions. Discover new culinary delights, connect with friends, and savor the joy of effortless dining through our feature-rich food menu app.",
+                summary:"<ul><li>Our food menu app is a user-friendly platform that revolutionizes your dining experience.</li><li> Explore a diverse range of restaurants and menus with enticing visuals, detailed descriptions, and prices.</li><li> Personalize your orders, select pickup or delivery, and make secure payments.</li><li> Stay updated with push notifications on order status and exclusive promotions.</li><li> Discover new culinary delights and connect with friends.</li><li> Enjoy effortless dining through our feature-rich food menu app.</li></ul>",
+                img:"{% static 'images/Shiva-Wallpaper-blue-purple-sky.jpg' %}"
+            },
+            image2: {
+                title: "Image 2",
+                description: "Introducing our web-based CV generator, a powerful tool for creating professional resumes effortlessly. With an intuitive interface, you can easily input your information, select from a variety of stylish templates, and customize your CV to showcase your skills and experience. The generator offers sections for education, work history, skills, and more, ensuring a comprehensive and well-structured resume. Generate your CV in various formats, including PDF and Word, for easy sharing and printing. Impress potential employers with a polished and impactful resume using our user-friendly web-based CV generator.",
+                summary:"<ul><li>Our web-based CV generator is a user-friendly tool that simplifies the process of creating professional resumes.</li><li> With a range of stylish templates and intuitive interface, you can input your information and customize your CV effortlessly.</li><li> The generator offers sections for education, work history, and skills, ensuring a comprehensive resume.</li><li> Generate your CV in various formats for easy sharing.</li><li> Impress potential employers with a polished and impactful resume using our convenient web-based CV generator.</li></ul>",
+                img:"{% static 'images/Shiva-Wallpaper-blue-purple-sky.jpg' %}"
+            },
+            image3: {
+                title: "Image 3",
+                description: "Introducing our to-do list app, the ultimate productivity tool for staying organized and focused. With a clean and intuitive interface, you can easily create and manage tasks, set due dates, and prioritize your activities. Receive reminders and notifications to ensure you never miss a deadline. Customize your lists, categorize tasks, and track progress effortlessly. Collaborate with others by sharing lists and assigning tasks. Boost your productivity and conquer your goals with our streamlined to-do list app.",
+                summary:"<ul><li>Our to-do list app is a powerful productivity tool designed to keep you organized and focused.</li><li> With a clean interface, you can effortlessly create, manage, and prioritize tasks.</li><li> Set due dates, receive reminders, and track your progress.</li><li> Customize lists, collaborate with others, and stay on top of your goals.</li><li> Streamline your workflow and enhance productivity with our intuitive to-do list app.</li></ul>",
+                img:"{% static 'images/todo.png' %}"
+            },
+            image4: {
+                title: "Image 4",
+                description: "Introducing our invoice generator, a hassle-free solution for creating professional invoices in no time. With a user-friendly interface, you can easily input client information, itemize products or services, and calculate totals. Customize your invoice with your logo and branding for a personalized touch. Generate and send invoices in various formats, including PDF, to clients directly from the app. Keep track of outstanding payments and easily manage your invoicing process. Simplify your billing workflow with our efficient invoice generator.",
+                summary:"<ul><li>Our invoice generator simplifies the process of creating professional invoices.</li><li> With a user-friendly interface, input client details, itemize products/services, and calculate totals effortlessly.</li><li> Customize invoices with your logo and branding.</li><li> Generate and send invoices in multiple formats.</li><li> Easily track payments and manage your billing process.</li><li> Streamline your invoicing workflow with our efficient invoice generator.</li></ul>",
+                img:"{% static 'images/Shiva-Wallpaper-blue-purple-sky.jpg' %}"
+            },
+            image5: {
+                title: "Image 5",
+                description: "Introducing our web-based calculator, a versatile tool for performing various calculations with ease. With a user-friendly interface, input numbers and choose from a range of functions for addition, subtraction, multiplication, and division. The calculator also includes advanced features like square roots, percentages, and memory functions. Clear and accurate results are displayed instantly. Accessible from any web browser, our calculator is a reliable companion for quick and accurate calculations. Simplify your mathematical tasks with our convenient web-based calculator.",
+                summary:"<uL><li>Our web-based calculator is a versatile tool that simplifies complex calculations.</li><li> With a user-friendly interface, input numbers and perform basic to advanced mathematical functions effortlessly.</li><li> Calculate addition, subtraction, multiplication, division, percentages, square roots, and more. </li><li>Get instant and accurate results displayed on the screen.</li><li> Accessible from any web browser, our calculator is your reliable companion for quick and precise calculations.</li><li> Simplify your mathematical tasks with our efficient web-based calculator.</li></ul>",
+                img:"{% static 'images/Shiva-Wallpaper-blue-purple-sky.jpg' %}"
+            },
+            image6: {
+                title: "Image 6",
+                description: "Introducing our blog creation app, a user-friendly platform for building captivating blogs. With a simple interface, you can easily create and publish engaging blog posts. Customize the layout, fonts, and colors to match your branding. Add images, videos, and interactive elements to enhance the reader experience. Easily manage and organize your blog content with intuitive editing tools. Share your insights and stories with the world using our feature-rich blog creation app.",
+                summary:"<ul><li>Our blog creation app empowers you to create captivating and personalized blogs effortlessly.</li><li> With a user-friendly interface, create and publish engaging blog posts.</li><li>Customize the layout, fonts, and colors to reflect your unique style.</li><li>Enhance reader experience with multimedia elements. </li><li>Seamlessly manage and organize your blog content. </li><li>Share your insights and stories with the world using our feature-rich blog creation app.</li></ui>",
+                img:"{% static 'images/Shiva-Wallpaper-blue-purple-sky.jpg' %}"
+            },
+            image7: {
+                title: "Image 7",
+                description: "Introducing our email sender application, a reliable tool for sending emails with ease. With a user-friendly interface, compose and send professional emails effortlessly. Input recipients, subject, and content, and send with a click. Customize your email with formatting options and attachments. Manage contacts and organize email conversations seamlessly. Streamline your communication with our efficient email sender application.",
+                summary:"<ul><li>Our email sender application simplifies the process of sending professional emails. </li><li>With a user-friendly interface, compose and send messages effortlessly. </li><li>Input recipients, subject, and content, and send with a click. </li><li>Customize emails with formatting options and attachments. </li><li>Manage contacts and organize conversations seamlessly. </li><li>Streamline your communication with our efficient email sender application.</li></ul>",
+                img:"{% static 'images/Shiva-Wallpaper-blue-purple-sky.jpg' %}"
+            },
+            image8: {
+                title: "Image 8",
+                description: "Introducing our company website app, a powerful platform to showcase your business online. With a sleek and modern design, create a professional and engaging website to captivate your audience. Customize the layout, colors, and content to reflect your brand identity. Showcase your products, services, and company information with ease. Incorporate interactive features like contact forms and live chat for seamless customer interaction. Optimize your website for mobile devices, ensuring a seamless browsing experience. Elevate your online presence with our feature-rich company website app.",
+                summary:"<ul><li>Our company website app is a powerful platform to create a captivating online presence.</li><li> With a sleek design, customize your website to reflect your brand identity.</li><li> Showcase products, services, and company information effortlessly.</li><li> Engage customers with interactive features like contact forms and live chat.</li><li> Ensure a seamless browsing experience across all devices. </li><li>Elevate your online presence with our feature-rich company website app.</li></ul>",
+                img:"{% static 'images/Shiva-Wallpaper-blue-purple-sky.jpg' %}"
+
+            }
+        };
+
+        var a=details[imageName].img;
+          document.getElementById("detailsText").innerHTML =
+        "<strong>Project Name:</strong> " + details[imageName].title + "<br>" +"\n"+
+        "<strong>Description:</strong> " + details[imageName].description + "<br>" +"\n"+
+        "<strong>Summary:</strong> " + details[imageName].summary+"<br>"+
+         "<button  onclick=\"showImage('" + a + "')\">Preview</button>";
+
+     // Show the details overlay
+     document.getElementById("detailsOverlay").classList.add("show");
+    }
+
+    function hideDetails() {
+        // Hide the details overlay
+        document.getElementById("detailsOverlay").classList.remove("show");
+    }
+    function showImage(imageURL) {
+  var overlayImage = document.getElementById("overlayImage");
+  overlayImage.src = imageURL;
+  document.getElementById("imageOverlay").classList.add("show");
+}
+
+function hideImage() {
+  document.getElementById("imageOverlay").classList.remove("show");
+}
+
+function hideImage() {
+  document.getElementById("imageOverlay").classList.remove("show");
+}
+
+
+
+     function downloadFile(imageName) {
+  // Define a mapping of image names to their corresponding zip file URLs
+  const zipFileUrls = {
+    image1: '{% static 'zips/p1.zip' %}',
+    image2: 'https://example.com/path/to/image3.zip',
+    image3: 'https://example.com/path/to/image3.zip',
+    image4: 'https://example.com/path/to/image3.zip',
+    image5: 'https://example.com/path/to/image3.zip',
+    image6: 'https://example.com/path/to/image3.zip',
+    image7: 'DjangoAuth-20230626T154516Z-001.zip',
+
+    // Add more image names and zip file URLs as needed
+  };
+
+  // Retrieve the zip file URL based on the provided image name
+  const zipFileUrl = zipFileUrls[imageName];
+
+  if (zipFileUrl) {
+    // Create a temporary <a> element and initiate the zip file download
+    const anchor = document.createElement('a');
+    anchor.href = zipFileUrl;
+    anchor.download = zipFileUrl.substring(zipFileUrl.lastIndexOf('/') + 1);
+    anchor.click();
+  } else {
+    // Display an error message if the zip file URL is not found
+    console.error(`Zip file URL not found for ${imageName}`);
+  }
+}
+
+    </script>
+
+{% endblock %}
+</body>
+
+</html>
+

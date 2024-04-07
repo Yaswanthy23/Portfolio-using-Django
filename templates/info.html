@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+{% include 'navbar.html' %}
+{% load static %}
+<html>
+<head>
+    <title>Stylish Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/info.css' %}">
+</head>
+<body>
+{% block body_block %}
+    <h1>Project Description:</h1>
+
+<ul>
+    <li>The portfolio project is a Django-based web application designed to showcase various projects and their details. Its main objective is to provide a visually appealing platform where users can browse through different projects, view their descriptions, images, and summaries, and even download project files.</li>
+
+   <li>The project includes a comprehensive display of project details, allowing users to access all the relevant information about each project. This includes the project's title, description, and images. The description provides a thorough explanation of the project's purpose, goals, and any notable features or technologies used.</li>
+
+    <li>To enhance the user experience, the portfolio project incorporates images that visually represent each project. These images could be screenshots, logos, or any other relevant visuals that effectively convey the essence of the project. By incorporating images, users can quickly grasp the project's appearance and aesthetics.</li>
+
+    <li>Additionally, the portfolio project provides a summary for each project. The summary aims to provide a concise overview of the project, highlighting its key features, accomplishments, or any unique aspects that make it stand out. This summary serves as a quick reference for users who want to get an overview of the project without delving into the full description.</li>
+
+    <li>Moreover, the portfolio project enables users to download project files. This feature allows visitors to access the project's associated files, such as source code, documentation, or any additional resources. By providing download links, the project facilitates seamless access to relevant materials, empowering users to explore the projects further or utilize them in their own endeavors.</li>
+
+    <li>Overall, the portfolio project is a comprehensive Django application that prioritizes showcasing project details in an engaging and informative manner. By combining descriptions, images, summaries, and downloadable project files, it creates an immersive experience for users and enables them to gain a deeper understanding of the showcased projects.</li>
+</ul>
+
+{% endblock %}
+
+</body>
+
+</html>

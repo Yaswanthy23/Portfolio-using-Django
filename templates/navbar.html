@@ -1,0 +1,25 @@
+<!-- navbar.html -->
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="#">Portfolio</a>
+    </div>
+    <ul class="navbar-menu">
+      <li class="navbar-item"><a href="{% url 'index' %}"><h2>Menu</h2></a></li>
+
+      <li class="navbar-item"><a href="{% url 'projects' %}"><h2>Projects</h2></a></li>
+      <li class="navbar-item"><a href="{% url 'info' %}"><h2>Info</h2></a></li>
+    </ul>
+  </nav>
+</body>
+
+</html>
